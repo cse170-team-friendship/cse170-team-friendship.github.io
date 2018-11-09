@@ -2,13 +2,13 @@
 <html lang="en">
 	<head>
 		<title>LaunchPad</title>
-
+		
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		
 		<!-- favicon -->
 		<!-- TODO: make a .png or .ico version for tab icon -->
 		<link href="assets/logo.ico" rel="shortcut icon">
-
+		
 		<!-- css links -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
@@ -16,20 +16,6 @@
 		<!-- Link to FontAwesome icons for free icons -->
 		<link href="font-awesome/css/all.css" rel="stylesheet">
 
-		<!-- Firebase initialization code -->
-		<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
-		<script>
-		  // Initialize Firebase
-		  var config = {
-		    apiKey: "AIzaSyCC10Foydrc3wvtIebKN1kys_LoL40QU7Y",
-		    authDomain: "cse170-launchpad.firebaseapp.com",
-		    databaseURL: "https://cse170-launchpad.firebaseio.com",
-		    projectId: "cse170-launchpad",
-		    storageBucket: "cse170-launchpad.appspot.com",
-		    messagingSenderId: "80394625965"
-		  };
-		  firebase.initializeApp(config);
-		</script>
 	</head>
 
 	<body>
@@ -68,30 +54,59 @@
 			  	</div>
 			</nav>
 
-		<div class="container h-100">
-			<div class="row align-items-center justify-content-center h-100"> <!-- makes content align w/ center at 100% -->
-				<div class="col text-center">
-					<h1>LaunchPad Connects You To Others</h1>
-					<p>Start by selecting how you want to join the community.</p>
-					<button type="button" class="btn btn-primary cta-button" onclick="window.location.href='find.html'">Find a Mentor</button>
-					<button type="button" class="btn btn-secondary cta-button" onclick="window.location.href='register.html'">Be a Mentor</button>
+			<div class="container mt-3">
+				<div class="row justify-content-center">
+					<div class="col-6">
+						<h1>Sign In</h1>
+						<form class="needs-validation" action="index.html" novalidate>
+							<div class="form-group">
+								<label for="formGroupSignInUsername">Username</label>
+								<input type="text" class="form-control in-valid" id="formGroupSignInUsername" placeholder="Type here" required>
+								<div class="invalid-feedback">
+									Please enter a username.
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="formGroupSignInPassword">Password</label>
+								<input type="password" class="form-control in-valid" id="formGroupSignInPassword" placeholder="Type here" required>
+								<div class="invalid-feedback">
+									Please enter a username.
+								</div>
+							</div>
+							<button type="submit" class="btn btn-primary cta-button" id="signin-button">Submit</button>
 
+
+							<a data-toggle="modal" data-target="#passwordModal">Forgot Password</a>	
+					
+							<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="passwordModalLabel">Email Sent!</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p>An email containing instructions to reset your password has been sent to your email!</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-primary cta-button" data-dismiss="modal">
+												OK
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
-		</div>
-
-
-		<!-- Firebase App is always required and must be first -->
-		<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
-
-		<!-- Add additional services that you want to use -->
-		<!-- <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-auth.js"></script> -->
-		<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-database.js"></script>
-		<!-- <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-messaging.js"></script> -->
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/navbar.js"></script>
+		<script src="js/signin.js"></script>
 	</body>
 
 </html>
